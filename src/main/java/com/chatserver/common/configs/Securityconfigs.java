@@ -30,7 +30,7 @@ public class Securityconfigs {
                 .csrf(AbstractHttpConfigurer::disable) // csrf 비활성화
                 .httpBasic(AbstractHttpConfigurer::disable) // HTTP Basic 비활성화
                 .authorizeHttpRequests(a -> a.requestMatchers(
-                        "/member/create", "/member/doLogin").permitAll()
+                        "/member/create", "/member/doLogin", "/connect").permitAll()
                         .anyRequest().authenticated())
                 // 세션 방식을 사용하지 않겠다는 의미
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
